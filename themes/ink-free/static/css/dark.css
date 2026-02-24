@@ -41,6 +41,10 @@ html.dark table tbody tr:nth-of-type(even) {
   background-color: rgba(255, 255, 255, 0.15);
 }
 
+html.dark .gist table tbody tr:nth-of-type(even) {
+  background-color: transparent;
+}
+
 html.dark .site-description a,
 html.dark .site-description a:hover {
   color: #ddd;
@@ -66,20 +70,68 @@ html.dark .footer {
   border-color: #333;
 }
 
-html.dark .highlight {
-  background-color: #333;
-}
-
 html.dark .header .site-description .scheme-toggle a svg {
     fill: #f8e04f !important;
     color: #f8e04f !important;
-}
-
-html.dark td pre code {
-  color: #333;
 }
 
 html.dark code:not(pre *)  {
   color: #ddd;
   background-color: #333;
 }
+
+/* ==========================================================================
+   GitHub Gist dark mode overrides
+   Colors match GitHub's own dark theme palette.
+   ========================================================================== */
+
+html.dark .gist .gist-file {
+  border-color: #30363d;
+}
+
+html.dark .gist .gist-data {
+  background-color: #0d1117;
+  border-color: #30363d;
+  color: #e6edf3;
+}
+
+html.dark .gist .gist-data .blob-wrapper {
+  background-color: #0d1117;
+}
+
+html.dark .gist .gist-data .blob-code {
+  color: #e6edf3;
+}
+
+html.dark .gist .gist-data .blob-num {
+  color: #6e7681;
+  border-color: #30363d;
+}
+
+html.dark .gist .gist-data .highlight {
+  background-color: #0d1117 !important;
+}
+
+html.dark .gist .gist-meta {
+  background-color: #161b22;
+  border-color: #30363d;
+  color: #8b949e;
+}
+
+html.dark .gist .gist-meta a {
+  color: #58a6ff;
+}
+
+/* Gist syntax token colors for dark mode (GitHub Primer dark) */
+html.dark .gist .pl-k { color: #ff7b72; }
+html.dark .gist .pl-s { color: #a5d6ff; }
+html.dark .gist .pl-c { color: #8b949e; }
+html.dark .gist .pl-en { color: #d2a8ff; }
+html.dark .gist .pl-smi { color: #e6edf3; }
+html.dark .gist .pl-pds { color: #79c0ff; }
+html.dark .gist .pl-s1 { color: #a5d6ff; }
+html.dark .gist .pl-c1 { color: #79c0ff; }
+html.dark .gist .pl-e { color: #d2a8ff; }
+html.dark .gist .pl-ent { color: #7ee787; }
+html.dark .gist .pl-v { color: #ffa657; }
+html.dark .gist .pl-sr { color: #79c0ff; }

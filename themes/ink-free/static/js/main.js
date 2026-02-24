@@ -1,44 +1,46 @@
 "use strict";
 
-function toggleDarkMode() {
-    var theme = localStorage.getItem("scheme"),
-        toggle = document.getElementById("scheme-toggle"),
-        container = document.getElementsByTagName("html")[0];
+function updateToggleIcon() {
+    var toggle = document.getElementById("scheme-toggle");
+    if (!toggle) return;
 
-    if (theme === "dark") {
-        toggle.innerHTML = feather.icons.sun.toSvg();
-        container.className = "dark";
+    var isDark = document.documentElement.classList.contains("dark");
+    toggle.innerHTML = isDark ? feather.icons.sun.toSvg() : feather.icons.moon.toSvg();
+}
+
+function setScheme(scheme) {
+    if (scheme === "dark") {
+        document.documentElement.classList.add("dark");
     } else {
-        toggle.innerHTML = feather.icons.moon.toSvg();
-        container.className = "";
+        document.documentElement.classList.remove("dark");
     }
+    localStorage.setItem("scheme", scheme);
+    updateToggleIcon();
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-    const globalDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-    const localMode = localStorage.getItem("scheme");
-    const mode = document.getElementById("scheme-toggle");
+    var localMode = localStorage.getItem("scheme");
 
-    if (globalDark && (localMode === null)) {
-        localStorage.setItem("scheme", "dark");
+    // On first visit, persist the OS preference that the inline head script already applied
+    if (localMode === null) {
+        var isDark = document.documentElement.classList.contains("dark");
+        localStorage.setItem("scheme", isDark ? "dark" : "light");
     }
 
+    // Set the correct toggle icon for the current state
+    updateToggleIcon();
+
+    // Listen for OS-level theme changes
+    window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", function (event) {
+        setScheme(event.matches ? "dark" : "light");
+    });
+
+    // Manual click toggle
+    var mode = document.getElementById("scheme-toggle");
     if (mode !== null) {
-        toggleDarkMode();
-
-        window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", function (event) {
-            if (event.matches) {
-                localStorage.setItem("scheme", "dark");
-            } else {
-                localStorage.setItem("scheme", "light");
-            }
-
-            toggleDarkMode();
-        });
-
         mode.addEventListener("click", function () {
-            localStorage.setItem("scheme", document.documentElement.classList.contains('dark') ? "light" : "dark");
-            toggleDarkMode();
+            var isDark = document.documentElement.classList.contains("dark");
+            setScheme(isDark ? "light" : "dark");
         });
     }
 });

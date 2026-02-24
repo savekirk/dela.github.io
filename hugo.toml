@@ -1,15 +1,15 @@
 baseURL = '/'
 languageCode = 'en-us'
-title = 'Dela Agbenyegah'
+title = 'Kirk Agbenyegah'
 theme = 'ink-free'
-copyright = "© Dela Agbenyegah"
+copyright = "© Kirk Agbenyegah"
 #ignoreErrors = ["error-missing-instagram-accesstoken"]
 
 [permalinks]
   posts = "/:year/:month/:title"
 
 [params]
-	subtitle = "Welcome to my personal space."
+	subtitle = "Shipping software, one hack at a time."
 
 	# Optional 64x64 avatar image.
 	avatar = "https://raw.githubusercontent.com/savekirk/dela.github.io/main/assets/images/me.jpg"
@@ -43,20 +43,20 @@ name = "Home"
 url = "/"
 weight = 1
 
-[[menu.main]]
-name = "All posts"
-url = "/posts"
-weight = 2
+# [[menu.main]]
+# name = "All posts"
+# url = "/posts"
+# weight = 2
 
 [[menu.main]]
 name = "About"
 url = "/about"
 weight = 3
 
-[[menu.main]]
-name = "Tags"
-url = "/tags"
-weight = 4
+# [[menu.main]]
+# name = "Tags"
+# url = "/tags"
+# weight = 4
 
 [[params.social]]
 name = "Github"
@@ -78,8 +78,7 @@ url = "/index.xml"
     hl_Lines = ""
     lineNoStart = 1
     lineNos = "table"
-    noClasses = true
-    style = "github"
+    noClasses = false
     tabWidth = 4
 
   [markup.tableOfContents]

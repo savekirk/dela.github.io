@@ -6,6 +6,7 @@
 		{{ partial "head.html" . }}
 
 		<div class="post">
+			{{ if ne .Type "page" }}
 			<div class="post-header">
 				{{ if ne .Date.Year 1 }}
 					<div class="meta">
@@ -19,6 +20,7 @@
 					<h1 class="title">{{ .Title }}</h1>
 				</div>
 			</div>
+			{{ end }}
 
 			
 			{{ if and (gt .WordCount 400 ) (.Site.Params.toc) (ne .Params.toc false) }}

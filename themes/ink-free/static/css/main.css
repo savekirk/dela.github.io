@@ -4,6 +4,9 @@ body {
     color: #333;
     line-height: 1.8em;
     font-size: 17px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 a {
@@ -97,6 +100,15 @@ table th {
     background-color: #212529;
     border-color: #32383e;
     color: #fff;
+}
+
+/* Prevent theme table styles from bleeding into gist embeds */
+.gist table th,
+.gist table td {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    color: inherit;
 }
 
 textarea {
@@ -220,12 +232,14 @@ ul {
 
 .wrapper {
     max-width: 760px;
+    width: 100%;
     margin: 0 auto;
 }
 
 .container {
     max-width: 800px;
     margin-top: 50px;
+    flex: 1;
 }
 
 .header {
@@ -391,7 +405,7 @@ ul {
     font-size: 0.75em;
     color: #999;
     border-top: 1px solid #f4f4f4;
-    margin-top: 40px;
+    margin-top: auto;
     padding: 15px 0;
 }
 
