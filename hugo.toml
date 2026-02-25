@@ -1,4 +1,4 @@
-baseURL = '/'
+baseURL = 'https://dela.dev/'
 languageCode = 'en-us'
 title = 'Kirk Agbenyegah'
 theme = 'ink-free'
