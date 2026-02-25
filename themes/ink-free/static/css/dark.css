@@ -56,8 +56,14 @@ html.dark a:hover {
 }
 
 html.dark .post-tags .tags a {
-  border: 1px solid #ddd;
-  color: #ddd;
+  border-color: #9375fd;
+  color: #9375fd;
+}
+
+html.dark .post .tags a,
+html.dark .tags.flat a {
+  border-color: #9375fd;
+  color: #9375fd;
 }
 
 html.dark .site-title a {
