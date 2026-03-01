@@ -158,4 +158,9 @@ html.dark .chroma .gs { font-weight:bold }
 html.dark .chroma .gu { color:#79c0ff }
 html.dark .chroma .gt { color:#ff7b72 }
 html.dark .chroma .gl { text-decoration:underline }
+html.dark .chroma .na { color:#79c0ff }
+html.dark .chroma .nb { color:#d2a8ff }
+html.dark .chroma .nx { color:#e6edf3 }
+html.dark .chroma .bp { color:#8b949e }
+html.dark .chroma .p { color:#e6edf3 }
 html.dark .chroma .w { color:#6e7681 }
