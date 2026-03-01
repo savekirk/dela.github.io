@@ -8,28 +8,21 @@ toc: false
 draft: false
 ---
 
-![Timeline hover preview demo during scrubbing](/images/timeline-hover-previews/preview-demo.png)
+![Preview thumbnails shown during seek bar scrubbing](/images/timeline-hover-previews/preview-demo.png "Timeline hover previews during scrubbing")
 
-Timeline hover previews also called **trick play**, **scrub bar previews**, or **seek bar previews** show an image popup as the user scrubs through a video, similar to YouTube.
+When you scrub through a video on YouTube, you see a thumbnail popup that follows your finger. These are commonly called **timeline hover previews** (or trick play, scrub bar previews). Behind the scenes, the player maps the seek position to a tile inside a **storyboard**: a single sprite image containing many thumbnails arranged in a grid, paired with metadata that describes which region corresponds to which time range.
 
-To support this, you need:
+This is usually generated server-side, but you can do it entirely on-device using [Media3 Inspector](https://developer.android.com/media/media3/inspector) APIs. Here's how.
 
-- preview images extracted from the video,
-- the time positions those images represent,
-- metadata so the player can map a seek time to the correct preview tile.
+The complete implementation is in [StoryBoardGenerator.kt](https://github.com/savekirk/android-media-lab/blob/main/src/StoryBoardGenerator.kt).
 
-A common approach is to generate a **storyboard** (sprite sheet): a single image containing many thumbnails laid out in a grid. This is often done server-side, but you can also generate it on-device. In this article, we focus on how to do that using Android Media3 Inspector APIs.
+## Retrieve video duration with MetadataRetriever
 
-## Creating the storyboard
+Before extracting frames, we need to know how long the video is so we can compute evenly-spaced thumbnail positions.
 
-We will use the [Media3 Inspector](https://developer.android.com/media/media3/inspector) module to inspect media and extract frames from a local or remote `MediaItem`.
-You can find the complete implementation in [StoryBoardGenerator.kt](https://github.com/savekirk/android-media-lab/blob/main/src/StoryBoardGenerator.kt).
+[MetadataRetriever](https://developer.android.com/reference/androidx/media3/inspector/MetadataRetriever) reads media metadata without decoding the full stream. We build one from a `MediaItem`, call `retrieveDurationUs()`, and convert the result from microseconds to milliseconds.
 
-### Retrieve video duration
-
-Before extracting frames, get the video duration.
-
-We use [MetadataRetriever](https://developer.android.com/reference/androidx/media3/inspector/MetadataRetriever) to read duration in microseconds, then convert it to milliseconds.
+`MetadataRetriever` implements `AutoCloseable`, so wrapping it in `.use {}` ensures it releases its internal extractor resources when we're done. The `retrieveDurationUs()` method returns a `ListenableFuture`. Calling `.await()` bridges it into a coroutine suspension point so we don't block any threads.
 
 ```kotlin
 private suspend fun retrieveDurationMs(): Long {
@@ -49,54 +42,15 @@ private suspend fun retrieveDurationMs(): Long {
 
 Read more: [Retrieve metadata with Media3 Inspector](https://developer.android.com/media/media3/inspector/retrieve-metadata).
 
-### Grid layout
+## Extract frames with FrameExtractor
 
-The storyboard is a grid. Given the total number of thumbnails, choose rows and columns so:
+With the duration known, we compute evenly-spaced positions and arrange them into a balanced grid (see the [grid layout logic](https://github.com/savekirk/android-media-lab/blob/main/src/StoryBoardGenerator.kt) in the full source). The interesting part is pulling the actual frames out of the video.
 
-- all thumbnails fit exactly,
-- there are no empty cells,
-- the grid is as balanced (square-like) as possible.
+[FrameExtractor](https://developer.android.com/reference/androidx/media3/inspector/frame/FrameExtractor) decodes frames at specific timestamps from a `MediaItem`. Like `MetadataRetriever`, it implements `AutoCloseable`, so `.use {}` ensures the underlying codec and surface resources are released when extraction is done.
 
-If the thumbnail count is a perfect square, for example `9`, the grid is `3 x 3`. Otherwise, find the divisor closest to `sqrt(totalThumbnail)` and derive rows from it.
+Before building the extractor, we set up a [Presentation](https://developer.android.com/reference/androidx/media3/effect/Presentation) effect with `createForWidthAndHeight`. This is a Media3 video effect that resizes each decoded frame to our target thumbnail dimensions using `LAYOUT_SCALE_TO_FIT`, so every tile ends up the same size regardless of the source video's aspect ratio.
 
-```kotlin
-private fun getTile(totalThumbnail: Int): Pair<Int, Int> {
-    val factor = sqrt(totalThumbnail.toDouble()).toInt()
-    // If factor is an integer, it's a perfect square
-    if (factor * factor == totalThumbnail) {
-        return Pair(factor, factor)
-    }
-
-    val divisors = mutableListOf<Int>()
-    for (currentDiv in 1..totalThumbnail) {
-        if (totalThumbnail % currentDiv == 0) {
-            divisors.add(currentDiv)
-        }
-    }
-
-    val target = sqrt(totalThumbnail.toDouble())
-    var bestCol = 1
-    var minDiff = Double.MAX_VALUE
-
-    for (div in divisors) {
-        // The product of div and (totalThumbnail / div) is always totalThumbnail
-        val currentDiff = kotlin.math.abs(div - target)
-        if (currentDiff < minDiff) {
-            minDiff = currentDiff
-            bestCol = div
-        }
-    }
-    val bestRow = totalThumbnail / bestCol
-
-    return Pair(bestCol, bestRow)
-}
-```
-
-### Fill the grid
-
-Create a bitmap large enough to hold every tile, then extract frames at target positions and draw each frame at its grid location.
-
-[FrameExtractor](https://developer.android.com/reference/androidx/media3/inspector/frame/FrameExtractor) handles frame extraction. We also apply a resize effect so every tile has consistent dimensions.
+`getFrame()` takes a timestamp in milliseconds and returns a `ListenableFuture<Frame>`. The returned frame's bitmap is the decoded, resized image at (or near) that position. We `.await()` it like we did with the duration call, then draw the bitmap onto the storyboard canvas at the correct grid position and recycle it to free the pixel memory.
 
 ```kotlin
 private suspend fun extractFrames(positions: List<Long>) {
@@ -121,65 +75,32 @@ private suspend fun extractFrames(positions: List<Long>) {
 }
 ```
 
-At this point, you have the storyboard image (`.jpg`) in cache.
+`drawFrame` computes the x/y offset from the tile index and draws the bitmap onto a pre-allocated `Canvas` backed by the full storyboard `Bitmap`. After all positions are processed, the storyboard is saved as a `.jpg`.
 
-### Storyboard metadata (WebVTT)
+## Storyboard metadata (WebVTT)
 
-A sprite image alone is not enough. The player also needs:
+A sprite image alone isn't enough. The player needs to know which region of the image corresponds to which time range. [WebVTT](https://developer.mozilla.org/en-US/docs/Web/API/WebVTT_API) is a common format for this. Each cue specifies a time range and points to a rectangular region in the sprite using `#xywh=`:
 
-- cue time range (`start --> end`),
-- tile coordinates (`x,y,width,height`) inside the sprite.
+```text
+WEBVTT
 
-WebVTT is a common format for timeline previews. Each cue points to the sprite file using `#xywh=`.
+00:00:00.000 --> 00:00:05.000
+storyboard.jpg#xywh=0,0,160,90
 
-```kotlin
-private fun buildWebVttMetadata(
-    imageFileName: String,
-    tiles: List<StoryBoardTileMetadata>,
-): String {
-    val builder = StringBuilder()
-    builder.append("WEBVTT\n\n")
+00:00:05.000 --> 00:00:10.000
+storyboard.jpg#xywh=160,0,160,90
 
-    tiles.forEach { tileMetadata ->
-        builder
-            .append(formatAsWebVttTime(tileMetadata.startTimeMs))
-            .append(" --> ")
-            .append(formatAsWebVttTime(tileMetadata.endTimeMs))
-            .append('\n')
-            .append(imageFileName)
-            .append("#xywh=")
-            .append(tileMetadata.x)
-            .append(',')
-            .append(tileMetadata.y)
-            .append(',')
-            .append(tileMetadata.width)
-            .append(',')
-            .append(tileMetadata.height)
-            .append("\n\n")
-    }
-
-    return builder.toString().trimEnd() + "\n"
-}
+00:00:10.000 --> 00:00:15.000
+storyboard.jpg#xywh=320,0,160,90
 ```
 
-This produces a `.vtt` file where each cue maps a time interval to a tile in the sprite.
-
-## Using the generated outputs
-
-The generator returns:
-
-- sprite image file (`.jpg`),
-- WebVTT metadata file (`.vtt`),
-- frame positions and grid details.
-
-Your player integration can then load the VTT and sprite to render hover previews during scrubbing.
+We generate this by iterating over the grid tiles and writing each cue's time range and pixel coordinates. The [full builder code](https://github.com/savekirk/android-media-lab/blob/main/src/StoryBoardGenerator.kt) is straightforward string formatting.
 
 ## Wrap-up
 
-Using Media3 Inspector, you can build timeline previews fully on-device by:
+Media3 Inspector gives you two APIs that do the heavy lifting here:
 
-1. reading media duration with `MetadataRetriever`,
-2. extracting resized frames with `FrameExtractor`,
-3. composing a storyboard sprite and WebVTT timeline metadata.
+- **`MetadataRetriever`**: reads media duration (and other metadata) without full decoding.
+- **`FrameExtractor`**: decodes frames at arbitrary timestamps, with support for Media3 video effects like `Presentation` for resizing.
 
-That gives you the core building blocks needed for timeline hover previews without requiring server-side storyboard generation.
+Both are `AutoCloseable`, return `ListenableFuture` results that play nicely with coroutines, and work with any `MediaItem` (local or remote). Pair them with a simple grid layout and WebVTT metadata generator, and you have on-device timeline hover previews without needing a server.
