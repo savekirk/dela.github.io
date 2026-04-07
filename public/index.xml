@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kirk Agbenyegah</title>
+    <link>https://dela.dev/</link>
+    <description>Recent content on Kirk Agbenyegah</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <copyright>© Kirk Agbenyegah</copyright>
+    <lastBuildDate>Sun, 01 Mar 2026 00:00:00 +0300</lastBuildDate>
+    <atom:link href="https://dela.dev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Generating Timeline Hover Previews with Android Media3</title>
+      <link>https://dela.dev/2026/03/generating-timeline-hover-previews-with-android-media3/</link>
+      <pubDate>Sun, 01 Mar 2026 00:00:00 +0300</pubDate>
+      <guid>https://dela.dev/2026/03/generating-timeline-hover-previews-with-android-media3/</guid>
+      <description>Generate on-device storyboard sprites and WebVTT metadata for timeline hover previews using Android Media3 Inspector APIs.</description>
+    </item>
+    <item>
+      <title>Hacking ExoPlayer Download Service</title>
+      <link>https://dela.dev/2023/06/hacking-exoplayer-download-service/</link>
+      <pubDate>Sat, 03 Jun 2023 14:44:51 +0300</pubDate>
+      <guid>https://dela.dev/2023/06/hacking-exoplayer-download-service/</guid>
+      <description>Use Android ExoPlayer download service and manager to download files that can be used outside ExoPlayer.</description>
+    </item>
+    <item>
+      <title>Offline Recording at PingPong</title>
+      <link>https://dela.dev/2021/09/offline-recording-at-pingpong/</link>
+      <pubDate>Wed, 22 Sep 2021 00:00:00 +0000</pubDate>
+      <guid>https://dela.dev/2021/09/offline-recording-at-pingpong/</guid>
+      <description>How we built offline recording at PingPong to ensure users never lose their recordings, even without internet connectivity.</description>
+    </item>
+  </channel>
+</rss>

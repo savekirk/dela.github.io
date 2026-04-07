@@ -1,0 +1,93 @@
+{
+  "main": {
+    "id": "424c7f5e702af83d",
+    "type": "split",
+    "children": [
+      {
+        "id": "3da0a3ebcde97551",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "hacking-exoplayer-download-service.md",
+            "mode": "preview"
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "356a994372d4a7e6",
+    "type": "split",
+    "children": [
+      {
+        "id": "24b85802059e104e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2d2b7e85f0200eab",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "a67b294807c5e1fd",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "e0b889bcc9915c73",
+    "type": "split",
+    "children": [
+      {
+        "id": "667de6edde425b7e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0a6c786330804a7a",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "hacking-exoplayer-download-service.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "3da0a3ebcde97551",
+  "lastOpenFiles": [
+    "hacking-exoplayer-download-service.md"
+  ]
+}

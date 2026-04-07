@@ -15,4 +15,4 @@ Right now, I'm at Groovetime, using AI to build tools that help people learn dan
 
 I mostly write Kotlin, Swift, Dart, Elixir, and TypeScript -- but I'll pick up whatever gets the job done.
 
-[Download my CV (PDF)](/pdf/Kirk-S-Agbenyegah-Resume.pdf)
+[Download my CV (PDF)](/pdf/Kirk-Agbenyegah-resume.pdf)

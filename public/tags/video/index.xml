@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Video on Kirk Agbenyegah</title>
+    <link>https://dela.dev/tags/video/</link>
+    <description>Recent content in Video on Kirk Agbenyegah</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <copyright>© Kirk Agbenyegah</copyright>
+    <lastBuildDate>Sun, 01 Mar 2026 00:00:00 +0300</lastBuildDate>
+    <atom:link href="https://dela.dev/tags/video/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Generating Timeline Hover Previews with Android Media3</title>
+      <link>https://dela.dev/2026/03/generating-timeline-hover-previews-with-android-media3/</link>
+      <pubDate>Sun, 01 Mar 2026 00:00:00 +0300</pubDate>
+      <guid>https://dela.dev/2026/03/generating-timeline-hover-previews-with-android-media3/</guid>
+      <description>&lt;p&gt;&#xA;  &lt;figure&gt;&#xA;    &lt;img src=&#34;https://dela.dev/images/timeline-hover-previews/preview-demo.png&#34; alt=&#34;Preview thumbnails shown during seek bar scrubbing&#34; class=&#34;figcaption-img&#34;&gt;&#xA;    &lt;figcaption&gt;Timeline hover previews during scrubbing&lt;/figcaption&gt;&#xA;  &lt;/figure&gt;&#xA;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;When you scrub through a video on YouTube, you see a thumbnail popup that follows your finger. These are commonly called &lt;strong&gt;timeline hover previews&lt;/strong&gt; (or trick play, scrub bar previews). Behind the scenes, the player maps the seek position to a tile inside a &lt;strong&gt;storyboard&lt;/strong&gt;: a single sprite image containing many thumbnails arranged in a grid, paired with metadata that describes which region corresponds to which time range.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Offline Recording at PingPong</title>
+      <link>https://dela.dev/2021/09/offline-recording-at-pingpong/</link>
+      <pubDate>Wed, 22 Sep 2021 00:00:00 +0000</pubDate>
+      <guid>https://dela.dev/2021/09/offline-recording-at-pingpong/</guid>
+      <description>&lt;p&gt;At PingPong, our goal is to help distributed teams get their best work done.&lt;/p&gt;&#xA;&lt;p&gt;We&amp;rsquo;re building a product that lets you work when you want to get work done while making you incredibly fast and efficient.&lt;/p&gt;&#xA;&lt;p&gt;We aim to build the fastest and most reliable way to send asynchronous videos, audio messages, and screen recordings. We want our recordings to arrive the minute our users stop recording and never fail or lose data, even with serious connection issues.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
