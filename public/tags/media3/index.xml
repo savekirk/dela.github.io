@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Media3 on Kirk Agbenyegah</title>
-    <link>https://dela.dev/tags/media3/</link>
+    <link>http://localhost:1313/tags/media3/</link>
     <description>Recent content in Media3 on Kirk Agbenyegah</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>© Kirk Agbenyegah</copyright>
     <lastBuildDate>Sun, 01 Mar 2026 00:00:00 +0300</lastBuildDate>
-    <atom:link href="https://dela.dev/tags/media3/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/media3/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Generating Timeline Hover Previews with Android Media3</title>
-      <link>https://dela.dev/2026/03/generating-timeline-hover-previews-with-android-media3/</link>
+      <link>http://localhost:1313/2026/03/generating-timeline-hover-previews-with-android-media3/</link>
       <pubDate>Sun, 01 Mar 2026 00:00:00 +0300</pubDate>
-      <guid>https://dela.dev/2026/03/generating-timeline-hover-previews-with-android-media3/</guid>
-      <description>&lt;p&gt;&#xA;  &lt;figure&gt;&#xA;    &lt;img src=&#34;https://dela.dev/images/timeline-hover-previews/preview-demo.png&#34; alt=&#34;Preview thumbnails shown during seek bar scrubbing&#34; class=&#34;figcaption-img&#34;&gt;&#xA;    &lt;figcaption&gt;Timeline hover previews during scrubbing&lt;/figcaption&gt;&#xA;  &lt;/figure&gt;&#xA;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;When you scrub through a video on YouTube, you see a thumbnail popup that follows your finger. These are commonly called &lt;strong&gt;timeline hover previews&lt;/strong&gt; (or trick play, scrub bar previews). Behind the scenes, the player maps the seek position to a tile inside a &lt;strong&gt;storyboard&lt;/strong&gt;: a single sprite image containing many thumbnails arranged in a grid, paired with metadata that describes which region corresponds to which time range.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/2026/03/generating-timeline-hover-previews-with-android-media3/</guid>
+      <description>&lt;p&gt;&#xA;  &lt;figure&gt;&#xA;    &lt;img src=&#34;http://localhost:1313/images/timeline-hover-previews/preview-demo.png&#34; alt=&#34;Preview thumbnails shown during seek bar scrubbing&#34; class=&#34;figcaption-img&#34;&gt;&#xA;    &lt;figcaption&gt;Timeline hover previews during scrubbing&lt;/figcaption&gt;&#xA;  &lt;/figure&gt;&#xA;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;When you scrub through a video on YouTube, you see a thumbnail popup that follows your finger. These are commonly called &lt;strong&gt;timeline hover previews&lt;/strong&gt; (or trick play, scrub bar previews). Behind the scenes, the player maps the seek position to a tile inside a &lt;strong&gt;storyboard&lt;/strong&gt;: a single sprite image containing many thumbnails arranged in a grid, paired with metadata that describes which region corresponds to which time range.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

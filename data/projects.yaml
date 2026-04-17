@@ -1,0 +1,35 @@
+- name: Mailroom
+  url: https://github.com/savekirk/mailroom
+  description: Kotlin email composition and delivery library for server-side applications.
+  tags:
+    - Kotlin
+    - JVM
+    - Backend
+- name: pkl-dart
+  url: https://github.com/savekirk/pkl-dart
+  description: Dart bindings for Apple's Pkl configuration language.
+  tags:
+    - Dart
+    - SDK
+    - Configuration
+- name: Session Bridge
+  url: https://github.com/savekirk/session-bridge
+  description: Unofficial VS Code extension for browsing Entire checkpoints and committed sessions from the current repository.
+  tags:
+    - TypeScript
+    - VS Code
+    - Tooling
+- name: Android Media Lab
+  url: https://github.com/savekirk/android-media-lab
+  description: Sandbox for Android media experiments and prototyping.
+  tags:
+    - Kotlin
+    - Android
+    - Media
+- name: Exercism App
+  url: https://github.com/apps-fab/exercism-app
+  description: SwiftUI desktop app contribution.
+  tags:
+    - Swift
+    - SwiftUI
+    - macOS

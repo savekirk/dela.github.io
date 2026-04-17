@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+{{ partial "header.html" . }}
+
+<body>
+	<div class="container wrapper list">
+		{{ partial "head.html" . }}
+
+		<h2 class="page-title">{{ .Title }}</h2>
+
+		{{ if .Content }}
+		<div class="post">
+			{{ .Content }}
+		</div>
+		{{ end }}
+
+		<div class="projects section projects-page">
+			<div class="project-list">
+				{{ range .Site.Data.projects }}
+				<div class="project">
+					<h4 class="title small">
+						<a href="{{ .url }}">{{ .name }}</a>
+					</h4>
+					{{ if .tags }}
+					<h4 class="title small smaller">
+						<ul class="tags flat project-tags">
+							{{ range .tags }}
+							<li class="tag-li"><a href="#" onclick="return false;" aria-disabled="true">{{ . }}</a></li>
+							{{ end }}
+						</ul>
+					</h4>
+					{{ end }}
+					<p class="description">{{ .description }}</p>
+				</div>
+				{{ end }}
+			</div>
+		</div>
+	</div>
+
+	{{ partial "footer.html" . }}
+</body>
+
+</html>

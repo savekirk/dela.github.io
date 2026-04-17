@@ -76,6 +76,24 @@ html.dark .footer {
   border-color: #333;
 }
 
+html.dark .projects .project {
+  border-color: #333;
+}
+
+html.dark .projects .description {
+  color: #b7b7b7;
+}
+
+html.dark .section-link {
+  border-color: #9375fd;
+  color: #9375fd;
+}
+
+html.dark .section-link:hover {
+  background-color: #9375fd;
+  color: #111;
+}
+
 html.dark .header .site-description .scheme-toggle a svg {
     fill: #f8e04f !important;
     color: #f8e04f !important;

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gradle on Kirk Agbenyegah</title>
+    <link>http://localhost:1313/tags/gradle/</link>
+    <description>Recent content in Gradle on Kirk Agbenyegah</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <copyright>© Kirk Agbenyegah</copyright>
+    <lastBuildDate>Thu, 28 Apr 2016 00:00:00 +0300</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/gradle/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Moving Your Android Data Binding App Out of Beta</title>
+      <link>http://localhost:1313/2016/04/moving-your-android-data-binding-app-out-of-beta/</link>
+      <pubDate>Thu, 28 Apr 2016 00:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/2016/04/moving-your-android-data-binding-app-out-of-beta/</guid>
+      <description>&lt;p&gt;At Google I/O 2015, the Android Data Binding library was introduced. As described in the &lt;a href=&#34;https://developer.android.com/topic/libraries/data-binding&#34;&gt;official guide&lt;/a&gt;, it gave you the opportunity to write declarative layouts and minimize the glue code needed to bind your application logic and layouts. Many people argued that this would give developers the power to write business logic in XML, which some developers were trying to move away from altogether.&lt;/p&gt;&#xA;&lt;p&gt;So I jumped on the Data Binding bandwagon and eventually shipped an Android app into production with Data Binding. Really. I swallowed the Data Binding beta pill.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

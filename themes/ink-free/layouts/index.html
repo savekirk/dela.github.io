@@ -6,10 +6,11 @@
 		{{ partial "head.html" . }}
 
 		<div class="recent-posts section">
+			<div class="section-header">Top Posts</div>
 			<div class="posts">
 				{{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
-				{{ $paginator := .Paginate (where $pages "Params.hidden" "ne" true) }}
-				{{ range $paginator.Pages }}
+				{{ $visiblePages := where $pages "Params.hidden" "ne" true }}
+				{{ range first 3 $visiblePages }}
 					<div class="post">
 						<div class="post-header">
 							<div class="meta">
@@ -47,9 +48,39 @@
 						</div>
 					</div>
 				{{ end }}
-				{{ template "partials/paginator.html" . }}
+				<div class="section-actions">
+					<a class="section-link" href="{{ "/posts" | relLangURL }}">View all posts</a>
+				</div>
 			</div>
 		</div>
+
+		{{ if .Site.Data.projects }}
+		<div class="projects section">
+			<div class="section-header">Projects</div>
+			<div class="project-list">
+				{{ range .Site.Data.projects }}
+				<div class="project">
+					<h4 class="title small">
+						<a href="{{ .url }}">{{ .name }}</a>
+					</h4>
+					{{ if .tags }}
+					<h4 class="title small smaller">
+						<ul class="tags flat project-tags">
+							{{ range .tags }}
+							<li class="tag-li"><a href="#" onclick="return false;" aria-disabled="true">{{ . }}</a></li>
+							{{ end }}
+						</ul>
+					</h4>
+					{{ end }}
+					<p class="description">{{ .description }}</p>
+				</div>
+				{{ end }}
+			</div>
+			<div class="section-actions">
+				<a class="section-link" href="{{ "/projects" | relLangURL }}">View all projects</a>
+			</div>
+		</div>
+		{{ end }}
 	</div>
 	{{ partial "footer.html" . }}
 </body>

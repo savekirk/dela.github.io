@@ -2,33 +2,40 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Kirk Agbenyegah</title>
-    <link>https://dela.dev/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content on Kirk Agbenyegah</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>© Kirk Agbenyegah</copyright>
     <lastBuildDate>Sun, 01 Mar 2026 00:00:00 +0300</lastBuildDate>
-    <atom:link href="https://dela.dev/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Generating Timeline Hover Previews with Android Media3</title>
-      <link>https://dela.dev/2026/03/generating-timeline-hover-previews-with-android-media3/</link>
+      <link>http://localhost:1313/2026/03/generating-timeline-hover-previews-with-android-media3/</link>
       <pubDate>Sun, 01 Mar 2026 00:00:00 +0300</pubDate>
-      <guid>https://dela.dev/2026/03/generating-timeline-hover-previews-with-android-media3/</guid>
+      <guid>http://localhost:1313/2026/03/generating-timeline-hover-previews-with-android-media3/</guid>
       <description>Generate on-device storyboard sprites and WebVTT metadata for timeline hover previews using Android Media3 Inspector APIs.</description>
     </item>
     <item>
       <title>Hacking ExoPlayer Download Service</title>
-      <link>https://dela.dev/2023/06/hacking-exoplayer-download-service/</link>
+      <link>http://localhost:1313/2023/06/hacking-exoplayer-download-service/</link>
       <pubDate>Sat, 03 Jun 2023 14:44:51 +0300</pubDate>
-      <guid>https://dela.dev/2023/06/hacking-exoplayer-download-service/</guid>
+      <guid>http://localhost:1313/2023/06/hacking-exoplayer-download-service/</guid>
       <description>Use Android ExoPlayer download service and manager to download files that can be used outside ExoPlayer.</description>
     </item>
     <item>
       <title>Offline Recording at PingPong</title>
-      <link>https://dela.dev/2021/09/offline-recording-at-pingpong/</link>
+      <link>http://localhost:1313/2021/09/offline-recording-at-pingpong/</link>
       <pubDate>Wed, 22 Sep 2021 00:00:00 +0000</pubDate>
-      <guid>https://dela.dev/2021/09/offline-recording-at-pingpong/</guid>
+      <guid>http://localhost:1313/2021/09/offline-recording-at-pingpong/</guid>
       <description>How we built offline recording at PingPong to ensure users never lose their recordings, even without internet connectivity.</description>
+    </item>
+    <item>
+      <title>Moving Your Android Data Binding App Out of Beta</title>
+      <link>http://localhost:1313/2016/04/moving-your-android-data-binding-app-out-of-beta/</link>
+      <pubDate>Thu, 28 Apr 2016 00:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/2016/04/moving-your-android-data-binding-app-out-of-beta/</guid>
+      <description>A quick fix for migrating an Android app from the beta Data Binding setup to the stable configuration.</description>
     </item>
   </channel>
 </rss>

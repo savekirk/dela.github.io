@@ -385,7 +385,8 @@ ul {
     background-color: #f9f2f4;
 }
 
-.post .tags a {
+.post .tags a,
+.projects .tags a {
     display: inline-block;
     border: 1px solid #3700ff;
     border-radius: 3px;
@@ -455,6 +456,66 @@ ul {
     text-align: right;
 }
 
+.projects {
+    margin-top: 65px;
+}
+
+.section-actions {
+    margin-top: 26px;
+}
+
+.section-link {
+    border: 1px solid #3700ff;
+    border-radius: 999px;
+    color: #3700ff;
+    display: inline-block;
+    font-size: 0.9rem;
+    line-height: 1;
+    padding: 12px 18px;
+}
+
+.section-link:hover {
+    background-color: #3700ff;
+    color: #fff;
+}
+
+.projects .project-list {
+    display: grid;
+    gap: 28px;
+}
+
+.projects .project {
+    border-top: 1px solid #eee;
+    padding-top: 24px;
+}
+
+.projects .project:first-child {
+    border-top: none;
+    padding-top: 0;
+}
+
+.projects .title.small {
+    margin: 0 0 10px 0;
+}
+
+.projects .project-tags {
+    margin: 0 0 12px 0;
+}
+
+.projects .project-tags a {
+    cursor: default;
+}
+
+.projects .description {
+    color: #555;
+    display: block;
+    margin: 0;
+}
+
+.projects-page {
+    margin-top: 0;
+}
+
 @media (max-width: 900px) {
     body {
         padding: 20px;
@@ -487,6 +548,10 @@ ul {
     .header .nav li {
         margin: 0 10px 0 0;
         font-size: 14px;
+    }
+
+    .projects {
+        margin-top: 50px;
     }
 
     table {

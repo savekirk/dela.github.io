@@ -2,49 +2,61 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://dela.dev/tags/android/</loc>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2026-04-17T00:00:00+03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/projects/</loc>
+    <lastmod>2026-04-17T00:00:00+03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/android/</loc>
     <lastmod>2026-03-01T00:00:00+03:00</lastmod>
   </url><url>
-    <loc>https://dela.dev/tags/exoplayer/</loc>
+    <loc>http://localhost:1313/tags/exoplayer/</loc>
     <lastmod>2026-03-01T00:00:00+03:00</lastmod>
   </url><url>
-    <loc>https://dela.dev/2026/03/generating-timeline-hover-previews-with-android-media3/</loc>
+    <loc>http://localhost:1313/2026/03/generating-timeline-hover-previews-with-android-media3/</loc>
     <lastmod>2026-03-01T00:00:00+03:00</lastmod>
   </url><url>
-    <loc>https://dela.dev/</loc>
+    <loc>http://localhost:1313/tags/media3/</loc>
     <lastmod>2026-03-01T00:00:00+03:00</lastmod>
   </url><url>
-    <loc>https://dela.dev/tags/media3/</loc>
+    <loc>http://localhost:1313/posts/</loc>
     <lastmod>2026-03-01T00:00:00+03:00</lastmod>
   </url><url>
-    <loc>https://dela.dev/posts/</loc>
+    <loc>http://localhost:1313/tags/</loc>
     <lastmod>2026-03-01T00:00:00+03:00</lastmod>
   </url><url>
-    <loc>https://dela.dev/tags/</loc>
+    <loc>http://localhost:1313/tags/video/</loc>
     <lastmod>2026-03-01T00:00:00+03:00</lastmod>
   </url><url>
-    <loc>https://dela.dev/tags/video/</loc>
-    <lastmod>2026-03-01T00:00:00+03:00</lastmod>
-  </url><url>
-    <loc>https://dela.dev/2023/06/hacking-exoplayer-download-service/</loc>
+    <loc>http://localhost:1313/2023/06/hacking-exoplayer-download-service/</loc>
     <lastmod>2023-06-03T14:44:51+03:00</lastmod>
   </url><url>
-    <loc>https://dela.dev/tags/media/</loc>
+    <loc>http://localhost:1313/tags/media/</loc>
     <lastmod>2023-06-03T14:44:51+03:00</lastmod>
   </url><url>
-    <loc>https://dela.dev/about/</loc>
+    <loc>http://localhost:1313/about/</loc>
     <lastmod>2023-04-15T22:44:58+05:30</lastmod>
   </url><url>
-    <loc>https://dela.dev/tags/architecture/</loc>
+    <loc>http://localhost:1313/tags/architecture/</loc>
     <lastmod>2021-09-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://dela.dev/tags/audio/</loc>
+    <loc>http://localhost:1313/tags/audio/</loc>
     <lastmod>2021-09-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://dela.dev/tags/offline/</loc>
+    <loc>http://localhost:1313/tags/offline/</loc>
     <lastmod>2021-09-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://dela.dev/2021/09/offline-recording-at-pingpong/</loc>
+    <loc>http://localhost:1313/2021/09/offline-recording-at-pingpong/</loc>
     <lastmod>2021-09-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/data-binding/</loc>
+    <lastmod>2016-04-28T00:00:00+03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/gradle/</loc>
+    <lastmod>2016-04-28T00:00:00+03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/2016/04/moving-your-android-data-binding-app-out-of-beta/</loc>
+    <lastmod>2016-04-28T00:00:00+03:00</lastmod>
   </url>
 </urlset>

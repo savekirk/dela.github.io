@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Architecture on Kirk Agbenyegah</title>
-    <link>https://dela.dev/tags/architecture/</link>
+    <link>http://localhost:1313/tags/architecture/</link>
     <description>Recent content in Architecture on Kirk Agbenyegah</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>© Kirk Agbenyegah</copyright>
     <lastBuildDate>Wed, 22 Sep 2021 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://dela.dev/tags/architecture/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/architecture/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Offline Recording at PingPong</title>
-      <link>https://dela.dev/2021/09/offline-recording-at-pingpong/</link>
+      <link>http://localhost:1313/2021/09/offline-recording-at-pingpong/</link>
       <pubDate>Wed, 22 Sep 2021 00:00:00 +0000</pubDate>
-      <guid>https://dela.dev/2021/09/offline-recording-at-pingpong/</guid>
+      <guid>http://localhost:1313/2021/09/offline-recording-at-pingpong/</guid>
       <description>&lt;p&gt;At PingPong, our goal is to help distributed teams get their best work done.&lt;/p&gt;&#xA;&lt;p&gt;We&amp;rsquo;re building a product that lets you work when you want to get work done while making you incredibly fast and efficient.&lt;/p&gt;&#xA;&lt;p&gt;We aim to build the fastest and most reliable way to send asynchronous videos, audio messages, and screen recordings. We want our recordings to arrive the minute our users stop recording and never fail or lose data, even with serious connection issues.&lt;/p&gt;</description>
     </item>
   </channel>
